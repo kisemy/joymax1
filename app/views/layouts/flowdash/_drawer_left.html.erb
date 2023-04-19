@@ -1,0 +1,221 @@
+<div class="mdk-drawer js-mdk-drawer" id="default-drawer" data-align="start">
+  <div class="mdk-drawer__content">
+    <div class="sidebar sidebar-dark bg-dark sidebar-left simplebar" data-simplebar>
+      <div class="d-flex align-items-center sidebar-p-a border-bottom">
+        <a href="#" class="flex d-flex align-items-center text-body text-underline-0">
+          <span class="avatar mr-3">
+            <img src="<%= image_path('flowdash/avatar/demi.png')%>" alt="avatar" class="avatar-img rounded-circle">
+          </span>
+          <span class="flex d-flex flex-column">
+            <strong>Adrian Demian</strong>
+            <small class="text-muted text-uppercase">Account Manager</small>
+          </span>
+        </a>
+        <div class="dropdown ml-auto">
+          <a href="#" data-toggle="dropdown" data-caret="false" class="text-muted"><i class="material-icons">more_vert</i></a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <div class="dropdown-item-text dropdown-item-text--lh">
+              <div><strong>Adrian Demian</strong></div>
+              <div>@adriandemian</div>
+            </div>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="<%= flowdash_path(:index) %>">Dashboard</a>
+
+
+            <a class="dropdown-item" href="#">My profile</a>
+            <a class="dropdown-item" href="<%#= edit_user_registration_path() %>">Edit account</a>
+            <div class="dropdown-divider"></div>
+            <%#= link_to "Logout", destroy_user_session_path, :method => :delete, class: 'dropdown-item' %>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="sidebar-heading sidebar-m-t">JOYMAX MENU</div>
+      <ul class="sidebar-menu">
+        <li class="sidebar-menu-item <% if current_page?(root_path) || current_page?(flowdash_path(:index)) || current_page?(flowdash_path(:staff)) ||  current_page?(flowdash_path(:analytics)) %> active open<% end %>">
+          <a class="sidebar-menu-button" data-toggle="collapse" href="#dashboards_menu">
+            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">dvr</i>
+            <span class="sidebar-menu-text"><strong> Dashboards </strong></span>
+
+
+
+<br>
+
+            <span class="ml-auto sidebar-menu-toggle-icon"></span>
+          </a>
+          <ul class="sidebar-submenu collapse <% if current_page?(root_path) || current_page?(flowdash_path(:index)) || current_page?(flowdash_path(:staff)) ||  current_page?(flowdash_path(:analytics)) %> show<% end %>" id="dashboards_menu">
+            <li class="sidebar-menu-item <% if current_page?(root_path) || current_page?(flowdash_path(:index))%>active<% end%>">
+              <a class="sidebar-menu-button" href="<%= flowdash_path(:index) %>">
+                <span class="sidebar-menu-text">Default</span>
+              </a>
+            </li>
+            <li class="sidebar-menu-item <% if current_page?(flowdash_path(:staff))%>active<% end%>">
+              <a class="sidebar-menu-button" href="<%= flowdash_path(:staff) %>">
+                  <span class="sidebar-menu-text">Chart of Accounts</span>
+              </a>
+            </li>
+
+            <li class="sidebar-menu-item <% if current_page?(flowdash_path(:analytics))%>active<% end%>">
+              <a class="sidebar-menu-button" href="<%= flowdash_path(:analytics) %>">
+                  <span class="sidebar-menu-text">Trial Balance</span>
+              </a>
+            </li>
+
+            <li class="sidebar-menu-item <% if current_page?(flowdash_path(:analytics))%>active<% end%>">
+              <a class="sidebar-menu-button" href="<%= flowdash_path(:analytics) %>">
+                  <span class="sidebar-menu-text">Income Statement</span>
+              </a>
+            </li>
+
+         <li class="sidebar-menu-item <% if current_page?(flowdash_path(:analytics))%>active<% end%>">
+              <a class="sidebar-menu-button" href="<%= flowdash_path(:analytics) %>">
+                  <span class="sidebar-menu-text">Balance Sheet</span>
+              </a>
+            </li>
+
+         <li class="sidebar-menu-item <% if current_page?(flowdash_path(:analytics))%>active<% end%>">
+              <a class="sidebar-menu-button" href="<%= flowdash_path(:analytics) %>">
+                  <span class="sidebar-menu-text">Bank Accounts</span>
+              </a>
+            </li>
+
+          <li class="sidebar-menu-item <% if current_page?(flowdash_path(:analytics))%>active<% end%>">
+              <a class="sidebar-menu-button" href="<%= flowdash_path(:analytics) %>">
+                  <span class="sidebar-menu-text">Cash Accounts</span>
+              </a>
+            </li>
+
+          <li class="sidebar-menu-item <% if current_page?(flowdash_path(:analytics))%>active<% end%>">
+              <a class="sidebar-menu-button" href="<%= flowdash_path(:analytics) %>">
+                  <span class="sidebar-menu-text">Customers</span>
+              </a>
+            </li>
+
+
+          <li class="sidebar-menu-item <% if current_page?(flowdash_path(:analytics))%>active<% end%>">
+              <a class="sidebar-menu-button" href="<%= flowdash_path(:analytics) %>">
+                  <span class="sidebar-menu-text">Sales Invoice</span>
+              </a>
+            </li>
+
+           <li class="sidebar-menu-item <% if current_page?(flowdash_path(:analytics))%>active<% end%>">
+              <a class="sidebar-menu-button" href="<%= flowdash_path(:analytics) %>">
+                  <span class="sidebar-menu-text">Sales Credit Memo</span>
+              </a>
+            </li>
+
+
+           <li class="sidebar-menu-item <% if current_page?(flowdash_path(:analytics))%>active<% end%>">
+              <a class="sidebar-menu-button" href="<%= flowdash_path(:analytics) %>">
+                  <span class="sidebar-menu-text">Receipts</span>
+              </a>
+            </li>
+
+           
+           <li class="sidebar-menu-item <% if current_page?(flowdash_path(:analytics))%>active<% end%>">
+              <a class="sidebar-menu-button" href="<%= flowdash_path(:analytics) %>">
+                  <span class="sidebar-menu-text">Payments</span>
+              </a>
+            </li>
+
+            <li class="sidebar-menu-item <% if current_page?(flowdash_path(:analytics))%>active<% end%>">
+              <a class="sidebar-menu-button" href="<%= flowdash_path(:analytics) %>">
+                  <span class="sidebar-menu-text">Funds Transfer</span>
+              </a>
+            </li>
+
+
+
+
+
+
+
+
+          </ul>
+        </li>      
+        <li class="sidebar-menu-item<% if current_page?(flowdash_path(:app_trello)) || current_page?(flowdash_path(:app_projects)) ||  current_page?(flowdash_path(:app_calendar))  ||  current_page?(flowdash_path(:app_chat)) %> active open<% end %>">
+          <a class="sidebar-menu-button" data-toggle="collapse" href="#apps_menu">
+            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">slideshow</i>
+            <span class="sidebar-menu-text">Apps</span>
+            <span class="ml-auto sidebar-menu-toggle-icon"></span>
+          </a>
+          <ul class="sidebar-submenu collapse <% if current_page?(flowdash_path(:app_trello)) || current_page?(flowdash_path(:app_projects)) ||  current_page?(flowdash_path(:app_calendar))  ||  current_page?(flowdash_path(:app_chat)) %>show<%end %>" id="apps_menu">
+            <li class="sidebar-menu-item <% if current_page?(flowdash_path(:app_trello))%>active<% end%>">
+              <a class="sidebar-menu-button" href="<%= flowdash_path(:app_trello) %>">
+                <span class="sidebar-menu-text">Trello</span>
+              </a>
+            </li>
+            <li class="sidebar-menu-item <% if current_page?(flowdash_path(:app_projects))%>active<% end%>">
+                <a class="sidebar-menu-button" href="<%= flowdash_path(:app_projects) %>">
+                  <span class="sidebar-menu-text">Projects</span>
+                </a>
+              </li>
+            <li class="sidebar-menu-item <% if current_page?(flowdash_path(:app_calendar))%>active<% end%>">
+              <a class="sidebar-menu-button" href="<%= flowdash_path(:app_calendar) %>">
+                <span class="sidebar-menu-text">Event Calendar</span>
+              </a>
+            </li>
+            <li class="sidebar-menu-item <% if current_page?(flowdash_path(:app_chat))%>active<% end%>">
+              <a class="sidebar-menu-button" href="<%= flowdash_path(:app_chat) %>">
+                <span class="sidebar-menu-text">Chat</span>
+              </a>
+            </li>
+          </ul>
+        
+        </li>
+
+<br>
+
+        <li class="sidebar-menu-item <% if current_page?(flowdash_path(:stories)) || current_page?(flowdash_path(:invoice)) ||  current_page?(flowdash_path(:pricing))  ||  current_page?(flowdash_path(:edit_account)) %>active open<% end %>">
+          <a class="sidebar-menu-button" data-toggle="collapse" href="#pages_menu">
+            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">description</i>
+            <span class="sidebar-menu-text">Pages</span>
+            <span class="ml-auto sidebar-menu-toggle-icon"></span>
+          </a>
+          <ul class="sidebar-submenu collapse <% if current_page?(flowdash_path(:stories)) || current_page?(flowdash_path(:invoice)) ||  current_page?(flowdash_path(:pricing))  ||  current_page?(flowdash_path(:edit_account)) %>show<%end %>"  id="pages_menu">
+            <li class="sidebar-menu-item <% if current_page?(flowdash_path(:stories))%>active<% end%>">
+              <a class="sidebar-menu-button" href="<%= flowdash_path(:stories) %>">
+                <span class="sidebar-menu-text">Stories</span>
+              </a>
+            </li>
+            <li class="sidebar-menu-item <% if current_page?(flowdash_path(:invoice))%>active<% end%>">
+              <a class="sidebar-menu-button" href="<%= flowdash_path(:invoice) %>">
+                <span class="sidebar-menu-text">Invoice</span>
+              </a>
+            </li>
+            <li class="sidebar-menu-item <% if current_page?(flowdash_path(:pricing))%>active<% end%>">
+              <a class="sidebar-menu-button" href="<%= flowdash_path(:pricing) %>">
+                <span class="sidebar-menu-text">Pricing</span>
+              </a>
+            </li>
+            <li class="sidebar-menu-item <% if current_page?(flowdash_path(:edit_account))%>active<% end%>">
+              <a class="sidebar-menu-button" href="<%= flowdash_path(:edit_account) %>">
+                <span class="sidebar-menu-text">Edit Account</span>
+              </a>
+            </li>
+        
+            <li class="sidebar-menu-item">
+              <a class="sidebar-menu-button" href="<%= flowdash_path(:login) %>">
+                <span class="sidebar-menu-text">Login</span>
+              </a>
+            </li>
+        
+            <li class="sidebar-menu-item">
+              <a class="sidebar-menu-button" href="<%= flowdash_path(:sign_up) %>">
+                <span class="sidebar-menu-text">Sign Up</span>
+              </a>
+            </li>
+        
+          </ul>
+        
+        </li>
+
+
+</div>
+
+ 
+
+

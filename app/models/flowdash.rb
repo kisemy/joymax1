@@ -1,0 +1,2 @@
+class Flowdash < ApplicationRecord
+end

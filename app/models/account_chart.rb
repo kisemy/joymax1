@@ -1,0 +1,2 @@
+class AccountChart < ApplicationRecord
+end

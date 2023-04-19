@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+<nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-0">
+        
+        <li class="breadcrumb-item active" aria-current="page">Show Customer </li>
+      </ol>
+    </nav>    
+   
+  </div>
+</div>
+
+<div class="container-fluid page__container">
+  <div class="card card-form">
+    <div class="row no-gutters">
+      <div class="col-lg-1 card-body">
+       
+      </div>
+      <div class="col-lg-12 card-form__body card-body">
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+
+<p>
+  <strong>Customer Name:</strong>
+  <%= @customer.custoner_name %>
+</p>
+
+<p>
+  <strong>Contact No:</strong>
+  <%= @customer.contactno %>
+</p>
+
+<p>
+  <strong>Contact Name:</strong>
+  <%= @customer.contact_name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @customer.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @customer.city %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @customer.date %>
+</p>
+
+<p>
+  <strong>Sale Person Code:</strong>
+  <%= @customer.sale_person_code %>
+</p>
+
+<p>
+  <strong>Sale Person Name:</strong>
+  <%= @customer.sale_person_name %>
+</p>
+
+</div>
+      </div>
+    </div>
+</div>
+  
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %>

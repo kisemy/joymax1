@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Account name:</strong>
+  <%= @account_chart.account_name %>
+</p>
+
+<p>
+  <strong>Ctype:</strong>
+  <%= @account_chart.ctype %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @account_chart.category %>
+</p>
+
+<p>
+  <strong>Class:</strong>
+  <%= @account_chart.class %>
+</p>
+
+<p>
+  <strong>Balance:</strong>
+  <%= @account_chart.balance %>
+</p>
+
+<%= link_to 'Edit', edit_account_chart_path(@account_chart) %> |
+<%= link_to 'Back', account_charts_path %>

@@ -1,0 +1,88 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Customers</h1>
+
+
+<div class="card">
+    <div class="card-header">
+      <form class="form-inline">
+        <label class="mr-sm-2" for="inlineFormFilterBy">Filter by:</label>
+        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormFilterBy" placeholder="Type a name">
+
+        <label class="sr-only" for="inlineFormRole">Role</label>
+        <select id="inlineFormRole" class="custom-select mb-2 mr-sm-2 mb-sm-0">
+          <option value="All Roles">All Roles</option>
+        </select>
+
+        <div class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
+          <input type="checkbox" class="custom-control-input" id="inlineFormPurchase">
+          <label class="custom-control-label" for="inlineFormPurchase">Made a Purchase?</label>
+        </div>
+      </form>
+    </div>
+
+
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Custoner name</th>
+      <th>Contactno</th>
+      <th>Contact name</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>Date</th>
+      <th>Sale person code</th>
+      <th>Sale person name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.custoner_name %></td>
+        <td><%= customer.contactno %></td>
+        <td><%= customer.contact_name %></td>
+        <td><%= customer.address %></td>
+        <td><%= customer.city %></td>
+        <td><%= customer.date %></td>
+        <td><%= customer.sale_person_code %></td>
+        <td><%= customer.sale_person_name %></td>
+        <td><%= link_to 'Show', customer %></td>
+        <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+ </div>
+</div>
+
+<br>
+
+<%= link_to 'New Customer', new_customer_path %>
+
+
+ <div class="card">
+    <div class="card-header">
+      <form class="form-inline">
+        <label class="mr-sm-2" for="inlineFormFilterBy">Filter by:</label>
+        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormFilterBy" placeholder="Type a name">
+
+        <label class="sr-only" for="inlineFormRole">Role</label>
+        <select id="inlineFormRole" class="custom-select mb-2 mr-sm-2 mb-sm-0">
+          <option value="All Roles">All Roles</option>
+        </select>
+
+        <div class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
+          <input type="checkbox" class="custom-control-input" id="inlineFormPurchase">
+          <label class="custom-control-label" for="inlineFormPurchase">Made a Purchase?</label>
+        </div>
+      </form>
+    </div>
+    <%= render "staff.table" %>
+  </div>
+</div>

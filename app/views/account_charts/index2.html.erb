@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="tree, treegrid, tree grid, hirarchy, hirarchical, parent child" />
+    <meta
+      name="description"
+      content="This example demonstrates how to perform two tasks: customizing the hierarchical tree column&#x27;s presentation and adding a formula to the group footers."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chart of Accounts | Data Views | GrapeCity DataViewsJS JavaScript Demos</title>
+
+    <link href="https://www.grapecity.com/dataviewsjs/demos/node_modules/normalize.css/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="https://www.grapecity.com/dataviewsjs/demos/static/css/base.css" rel="stylesheet" type="text/css" />
+    <link href="https://www.grapecity.com/dataviewsjs/demos/static/dataviews/gc.dataviews.core.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://www.grapecity.com/dataviewsjs/demos/static/dataviews/gc.dataviews.grid.min.css" rel="stylesheet" type="text/css" />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://www.grapecity.com/dataviewsjs/demos/static/js/app-polyfills.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+      window.process = {
+        env: {
+          NODE_ENV: 'production',
+          USE_NPM: false,
+          USE_CDN: false,
+          SITE_ROOT: 'https://www.grapecity.com/dataviewsjs/demos',
+          FRAMEWORK: 'purejs',
+          DVJS_LICENSE_KEY:
+            'GrapeCity-Internal-Use-Only,GrapeCity,E195393772372914#B0KV4Ny56Vr5Wb7w6buJWeGRWb4NXUnNXRlFWWXl6SoN5VzVkYslmQ95WTENkTllVQzd4QhpEejdDNJZlWOp6M7oERQNnWspkaaB5QMhnR7dmUkRnVJR4L5cHTKNkZZdDbRBzZIxmSSR6NrpVQaVUQrBlc6ImYysSd4UlUEZGbw2kMl9UOzQVMId6ZXtUN83CO5RzaZt4VY5kM5pkUGpUUUV7UExUeGpUdTV5dFJ4bPhTc8pGeXJHWrkzNlFzdUtWTr5UQDdVckdGbSVUWr2yMPNzctZVRxEEW9lEbsZHUKJnVaRXT5p6Z0tWMqJGVrtSTIZnaopGSWZXbVNjY0hzQB5We4dnUr3ER8MkI0IyUiwiIGZUNwEkN5MjI0ICSiwSM9ETO6czNygTM0IicfJye#4Xfd5nIZRVV9IiOiMkIsISM6ByUKN7dllmVhRXYEJiOi8kI1tlOiQmcQJCLiEDMzATOwAyMwgDMwIDMyIiOiQncDJCLiI7au26YukHdpNWZwFmcn9iKsAnau26YukHdpNWZwFmcn9iKs86Yu46bj9Se4l6YlBXYydmLqwSbvNmL6VGZ9RXajVGchJ7ZuoCLt36YukHdpNWZwFmcn9iKiojIz5GRiwiI9RXaDVGchJ7RiojIh94QiwSZ5JHd0ICb6VkIsICNxkjM7MjM7czM9MTN9EjI0ICZJJye0ICRiwiI34zZN3yZGNlUnJDe5wkQPVlcBh7SppmUNBlU9dWS7J4ZMRES4MTZkRXTxM7Uq5GeQdHcyFHVup6dQd6ZDpEVrNDSh9kbNdzZrl4dwdPQ',
+          SJS_LICENSE_KEY:
+            '*.grapecity.com,E613631884219496#B0qRgJHWSJ7NyBlc8BjNMRHW7g7YldTZXFTQuFnW4hVOCplVSlVV09ERlhEZuVTVKlTazE4Q6VGSw2CdWZUWSVmbjVXbrxmWFVWR8ZzQro7U84WMGdlbuVHb73kS5kjUTN4NvFVdLdXWVR4Nox6Z7UUSysEcXJEMsN6bDN4TxMDVwVmWBRzKxhkTzAXTaJmdD3CRFJTd8R4R6M5RklWa6oUaLlXMwR4R8ZUdtRWVxUUaQh6VXNDdEhlZ7FHR6QXTPJTVvkWcyZnbSdHRtZHcYF6TKN4axYGcZNjTDF7TvFTTr24VqZjVHVjcLd7QkRmdNxkI0IyUiwiI5gDOEF4QGVjI0ICSiwiMzkTO9kTOyMTM0IicfJye35XX3JSSGljQiojIDJCLiITMuYHITpEIkFWZyB7UiojIOJyebpjIkJHUiwiI4MDMyEDMgkDM8ATOxAjMiojI4J7QiwiIt36YukHdpNWZwFmcn9iKiojIz5GRiwiIj9WagkHdpNUZwFmcHJiOiEmTDJCLlVnc4pjIsZXRiwiI6kDN9EjM4gDOxMjNzEjNiojIklkIs4XZzxWYmpjIyNHZisnOiwmbBJye0ICRiwiI34TQ72kNBV6YXpXdGxGWxdHcol4MyUGUHJVbQVHRx44Sw84YxRkS4QnZadDNmhWWxV5QxFlTlZEbBJ5N8gUNQlDb7J6Kl36YHVnb4NGN92UMFdlNORFU8VDSaFlQSVlS4EHTrA5Ohh',
+        },
+      };
+    </script>
+
+    <script src="https://www.grapecity.com/dataviewsjs/demos/static/dataviews/gc.dataviews.common.min.js" type="text/javascript"></script>
+    <script src="https://www.grapecity.com/dataviewsjs/demos/static/dataviews/gc.dataviews.core.min.js" type="text/javascript"></script>
+    <script src="https://www.grapecity.com/dataviewsjs/demos/static/dataviews/gc.dataviews.grid.min.js" type="text/javascript"></script>
+
+    <script src="https://www.grapecity.com/dataviewsjs/demos/static/js/license.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+   
+
+<p id="notice"><%= notice %></p>
+
+<h1>Account Charts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Account name</th>
+      <th>Type</th>
+      <th>Category</th>
+      <th>Class</th>
+      <th>Balance</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @account_charts.each do |account_chart| %>
+      <tr>
+        <td><%= account_chart.account_name %></td>
+        <td><%= account_chart.type %></td>
+        <td><%= account_chart.category %></td>
+        <td><%= account_chart.class %></td>
+        <td><%= account_chart.balance %></td>
+        <td><%= link_to 'Show', account_chart %></td>
+        <td><%= link_to 'Edit', edit_account_chart_path(account_chart) %></td>
+        <td><%= link_to 'Destroy', account_chart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Account Chart', new_account_chart_path %>
+
+
+  </body>
+</html>

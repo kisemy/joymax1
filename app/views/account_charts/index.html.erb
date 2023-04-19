@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Account Charts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Account name</th>
+      <th>Ctype</th>
+      <th>Category</th>
+      <th>Class</th>
+      <th>Balance</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @account_charts.each do |account_chart| %>
+      <tr>
+        <td><%= account_chart.account_name %></td>
+        <td><%= account_chart.ctype %></td>
+        <td><%= account_chart.category %></td>
+        <td><%= account_chart.class %></td>
+        <td><%= account_chart.balance %></td>
+        <td><%= link_to 'Show', account_chart %></td>
+        <td><%= link_to 'Edit', edit_account_chart_path(account_chart) %></td>
+        <td><%= link_to 'Destroy', account_chart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Account Chart', new_account_chart_path %>
